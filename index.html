@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>HRizon - AI Readiness Assessment for HR</title>
+  <title>HRizon - HR AI 能力测评</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     
@@ -956,52 +956,52 @@
     <div id="stage1" class="stage active">
       <div class="header">
         <h1>HRizon</h1>
-        <p>Discover your AI readiness level and find your growth path</p>
+        <p>发现你的 AI 能力水平，找到专属成长路径</p>
         <div class="stats">
           <span class="stat-item">
             <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-            7-8 mins
+            7-8 分钟
           </span>
           <span class="stat-item">
             <svg class="stat-icon" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-            20 questions
+            20 道题目
           </span>
           <span class="stat-item">
             <svg class="stat-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
-            100% Free
+            完全免费
           </span>
         </div>
       </div>
 
       <!-- 测评背景介绍 -->
       <div class="about-section glass-card">
-        <h3><span class="about-icon">💡</span> Why Take This Assessment?</h3>
+        <h3><span class="about-icon">💡</span> 为什么选择这个测评？</h3>
         <div class="about-content">
           <div class="about-item">
             <div class="about-icon-small">🎯</div>
             <div class="about-text">
-              <strong>AI is Reshaping HR</strong>
-              <p>From resume screening to performance analysis, from employee service to strategic planning, AI tools are profoundly changing how HR works. McKinsey predicts that 60-70% of HR tasks could be automated by AI in the next 5 years.</p>
+              <strong>AI 正在重塑 HR 工作方式</strong>
+              <p>从简历筛选到绩效分析，从员工服务到战略规划，AI 工具正在深刻改变 HR 的工作方式。麦肯锡预测，未来 5 年 60-70% 的 HR 工作任务可以被 AI 自动化。</p>
             </div>
           </div>
           <div class="about-item">
             <div class="about-icon-small">📊</div>
             <div class="about-text">
-              <strong>Know Your AI Readiness Level</strong>
-              <p>Are you a "pioneer" or a "follower" in the AI era? Through 20 professional questions across 6 dimensions—awareness, habits, tools, workflow integration, innovation, and strategic thinking—we provide a comprehensive assessment of your HR AI capabilities.</p>
+              <strong>了解你的 AI 能力水平</strong>
+              <p>你是 AI 时代的"先行者"还是"跟随者"？通过 20 道专业题目，涵盖认知、习惯、工具、工作流整合、创新和战略思维 6 个维度，全面评估你的 HR AI 能力。</p>
             </div>
           </div>
           <div class="about-item">
             <div class="about-icon-small">🚀</div>
             <div class="about-text">
-              <strong>Get Your Personalized Growth Path</strong>
-              <p>The assessment not only tells you "where you are" but also provides targeted improvement suggestions and AI tool recommendations to help you continuously evolve your HR AI capabilities.</p>
+              <strong>获取专属成长路径</strong>
+              <p>测评不仅告诉你"在哪里"，还提供针对性的改进建议和 AI 工具推荐，帮助你持续提升 HR AI 能力。</p>
             </div>
           </div>
         </div>
       </div>
       
-      <div class="section-title">Select Your Role <span class="subtitle">(Results will be customized based on your role)</span></div>
+      <div class="section-title">选择你的角色 <span class="subtitle">(测评结果将根据你的角色定制)</span></div>
       
       <div class="role-grid">
         <div class="role-category glass-card" data-category="threePillars">
@@ -1053,7 +1053,7 @@
       </div>
       
       <div class="action-row">
-        <button class="btn-primary" id="startBtn" disabled>Select a role to begin</button>
+        <button class="btn-primary" id="startBtn" disabled>请先选择一个角色</button>
       </div>
     </div>
     
@@ -1061,7 +1061,7 @@
     <div id="stage2" class="stage">
       <div class="quiz-header glass-card">
         <div class="progress-section">
-          <div class="progress-text">Q <span id="currentQ">1</span>-<span id="endQ">5</span> of 20</div>
+          <div class="progress-text">第 <span id="currentQ">1</span>-<span id="endQ">5</span> 题，共 20 题</div>
           <div class="progress-bar">
             <div class="progress-fill" id="progressFill" style="width: 0%"></div>
           </div>
@@ -1084,15 +1084,15 @@
       <div class="question-list" id="questionList"></div>
       
       <div class="quiz-nav glass-card">
-        <button class="btn-secondary" id="prevBtn" style="visibility: hidden;">Previous</button>
-        <button class="btn-submit" id="nextBtn">Next</button>
+        <button class="btn-secondary" id="prevBtn" style="visibility: hidden;">上一题</button>
+        <button class="btn-submit" id="nextBtn">下一题</button>
       </div>
     </div>
     
     <!-- Stage 3: Loading -->
     <div id="stage3" class="stage loading-stage">
       <div class="loading-spinner"></div>
-      <p class="loading-text">Analyzing your AI readiness profile...</p>
+      <p class="loading-text">正在分析你的 AI 能力画像...</p>
     </div>
     
     <!-- Stage 4: Results -->
@@ -1108,253 +1108,253 @@
       
       <div class="result-content">
         <div class="result-section glass-card">
-          <h3><span class="section-icon">📊</span> 6-Dimension Capability Radar</h3>
+          <h3><span class="section-icon">📊</span> 六维能力雷达图</h3>
           <div class="radar-container">
             <canvas id="radarChart" width="280" height="280"></canvas>
           </div>
         </div>
         
         <div class="result-section glass-card">
-          <h3><span class="section-icon">📍</span> Areas for Improvement</h3>
+          <h3><span class="section-icon">📍</span> 待提升领域</h3>
           <ul class="weak-list" id="weakList"></ul>
         </div>
         
         <div class="result-section glass-card advice-section">
-          <h3><span class="section-icon">💡</span> Improvement Suggestions</h3>
+          <h3><span class="section-icon">💡</span> 改进建议</h3>
           <div class="advice-grid" id="adviceGrid"></div>
         </div>
         
         <div class="result-section glass-card share-section">
-          <h3><span class="section-icon">🎯</span> Share Your Level</h3>
-          <p class="share-privacy">Sharing only shows level and role, no specific scores to protect privacy</p>
+          <h3><span class="section-icon">🎯</span> 分享你的等级</h3>
+          <p class="share-privacy">分享仅显示等级和角色，不显示具体分数，保护隐私</p>
           <div class="share-buttons">
             <button class="btn-share btn-generate" id="generateBtn">
-              <span>🎨</span> Generate Share Card
+              <span>🎨</span> 生成分享卡片
             </button>
             <button class="btn-share btn-copy" id="copyBtn">
-              <span>📋</span> Copy to Clipboard
+              <span>📋</span> 复制到剪贴板
             </button>
           </div>
           <div class="share-preview" id="sharePreview">
             <canvas id="shareCard" width="360" height="480"></canvas>
-            <button class="download-btn" id="downloadBtn">Save Image</button>
+            <button class="download-btn" id="downloadBtn">保存图片</button>
           </div>
         </div>
         
         <div class="result-footer">
           <div class="credibility">
             <span class="cred-dot" id="credDot"></span>
-            <span id="credText">Response credibility: High</span>
+            <span id="credText">答题可信度：高</span>
           </div>
-          <button class="btn-restart" id="restartBtn">Retake Test</button>
+          <button class="btn-restart" id="restartBtn">重新测试</button>
         </div>
       </div>
     </div>
   </div>
   
-  <div class="toast" id="toast">Copied to clipboard</div>
+  <div class="toast" id="toast">已复制到剪贴板</div>
   
   <script>
     // ==================== Data ====================
     const dimensions = [
-      { id: 'cognition', name: 'AI Awareness', weight: 0.15 },
-      { id: 'habit', name: 'Usage Frequency', weight: 0.20 },
-      { id: 'tools', name: 'Tool Mastery', weight: 0.20 },
-      { id: 'workflow', name: 'Workflow Integration', weight: 0.20 },
-      { id: 'innovation', name: 'Innovation Driver', weight: 0.15 },
-      { id: 'strategy', name: 'Strategic Thinking', weight: 0.10 }
+      { id: 'cognition', name: 'AI 认知', weight: 0.15 },
+      { id: 'habit', name: '使用频率', weight: 0.20 },
+      { id: 'tools', name: '工具掌握', weight: 0.20 },
+      { id: 'workflow', name: '工作流整合', weight: 0.20 },
+      { id: 'innovation', name: '创新驱动', weight: 0.15 },
+      { id: 'strategy', name: '战略思维', weight: 0.10 }
     ];
     
     const questions = [
       // Q1-3: AI Cognition & Awareness (15%)
-      { id: 1, dimension: 'cognition', text: 'I understand the main AI applications in HR (resume screening, interview assistance, performance analysis, etc.)', options: ['Completely unaware', 'A little aware', 'Basically aware', 'Mostly aware', 'Very aware'], scores: [0, 1, 2, 3, 4] },
-      { id: 2, dimension: 'cognition', text: 'I follow AI trends and new tools in human resources', options: ['Never follow', 'Rarely follow', 'Occasionally follow', 'Often follow', 'Always following'], scores: [0, 1, 2, 3, 4] },
-      { id: 3, dimension: 'cognition', text: 'I can identify AI\'s "capability boundaries"—what AI is good at and what it is not', options: ['Completely unclear', 'Somewhat unclear', 'Basically clear', 'Mostly clear', 'Very clear'], scores: [0, 1, 2, 3, 4] },
+      { id: 1, dimension: 'cognition', text: '我了解 HR 领域主要的 AI 应用场景（简历筛选、面试辅助、绩效分析等）', options: ['完全不了解', '了解一点', '基本了解', '比较了解', '非常了解'], scores: [0, 1, 2, 3, 4] },
+      { id: 2, dimension: 'cognition', text: '我关注人力资源领域的 AI 趋势和新工具动态', options: ['从不关注', '偶尔关注', '有时关注', '经常关注', '持续关注'], scores: [0, 1, 2, 3, 4] },
+      { id: 3, dimension: 'cognition', text: '我能清晰判断 AI 的"能力边界"——什么擅长，什么不擅长', options: ['完全不清楚', '比较模糊', '基本清晰', '比较清晰', '非常清晰'], scores: [0, 1, 2, 3, 4] },
       
       // Q4-7: Usage Frequency & Habits (20%)
-      { id: 4, dimension: 'habit', text: 'How often do you use AI tools (ChatGPT, Copilot, etc.) per week?', options: ['Almost never', '1-2 times/week', '3-5 times/week', '1-2 times/day', 'Multiple times/day'], scores: [0, 1, 2, 3, 4] },
-      { id: 5, dimension: 'habit', text: 'AI tools have become a fixed part of my daily work', options: ['Completely disagree', 'Somewhat disagree', 'Neutral', 'Mostly agree', 'Completely agree'], scores: [0, 1, 2, 3, 4] },
-      { id: 6, dimension: 'habit', text: 'When encountering repetitive work, I proactively consider using AI for efficiency', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Always'], scores: [0, 1, 2, 3, 4] },
-      { id: 7, dimension: 'habit', text: 'I recommend good AI tools and tips to colleagues', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Proactively share'], scores: [0, 1, 2, 3, 4] },
+      { id: 4, dimension: 'habit', text: '你每周使用 AI 工具（如 ChatGPT、Copilot 等）的频率是？', options: ['几乎不用', '1-2次/周', '3-5次/周', '每天1-2次', '每天多次'], scores: [0, 1, 2, 3, 4] },
+      { id: 5, dimension: 'habit', text: 'AI 工具已成为我日常工作的固定组成部分', options: ['完全不同意', '不太同意', '中立', '比较同意', '完全同意'], scores: [0, 1, 2, 3, 4] },
+      { id: 6, dimension: 'habit', text: '遇到重复性工作时，我会主动考虑使用 AI 提效', options: ['从不', '偶尔', '有时', '经常', '总是'], scores: [0, 1, 2, 3, 4] },
+      { id: 7, dimension: 'habit', text: '我会向同事推荐好用的 AI 工具和使用技巧', options: ['从不', '偶尔', '有时', '经常', '主动分享'], scores: [0, 1, 2, 3, 4] },
       
       // Q8-11: Tool & Method Mastery (20%)
-      { id: 8, dimension: 'tools', text: 'How many AI-related tools do you use regularly (including plugins, SaaS, etc.)?', options: ['0', '1-2', '3-4', '5-6', 'More than 6'], scores: [0, 1, 2, 3, 4] },
-      { id: 9, dimension: 'tools', text: 'I can write effective prompts for different tasks', options: ['Completely unable', 'Somewhat unable', 'Basic ability', 'Mostly proficient', 'Very proficient'], scores: [0, 1, 2, 3, 4] },
-      { id: 10, dimension: 'tools', text: 'I verify the accuracy of AI-generated content before using it', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Every time'], scores: [0, 1, 2, 3, 4] },
-      { id: 11, dimension: 'tools', text: 'I understand and have used HR-specific AI tools (recruitment systems, training platforms, etc.)', options: ['Completely unaware', 'Heard of them', 'Tried them', 'Use regularly', 'Deep application'], scores: [0, 1, 2, 3, 4] },
+      { id: 8, dimension: 'tools', text: '你目前经常使用的 AI 相关工具有多少个（含插件、SaaS 等）？', options: ['0个', '1-2个', '3-4个', '5-6个', '6个以上'], scores: [0, 1, 2, 3, 4] },
+      { id: 9, dimension: 'tools', text: '我能针对不同任务写出有效的提示词（Prompts）', options: ['完全不会', '不太会', '基本可以', '比较熟练', '非常熟练'], scores: [0, 1, 2, 3, 4] },
+      { id: 10, dimension: 'tools', text: '使用 AI 生成的内容前，我会验证其准确性', options: ['从不', '偶尔', '有时', '经常', '每次都验证'], scores: [0, 1, 2, 3, 4] },
+      { id: 11, dimension: 'tools', text: '我了解并使用过 HR 专用的 AI 工具（招聘系统、培训平台等）', options: ['完全不了解', '听说过', '试用过', '经常使用', '深度应用'], scores: [0, 1, 2, 3, 4] },
       
       // Q12-15: Workflow Integration (20%)
-      { id: 12, dimension: 'workflow', text: 'I have embedded AI into specific work processes (emails, data analysis, report generation, etc.)', options: ['Not at all', 'Rarely', 'Some processes', 'Most processes', 'Fully integrated'], scores: [0, 1, 2, 3, 4] },
-      { id: 13, dimension: 'workflow', text: 'I have reusable AI work templates or SOPs', options: ['None', 'Few', 'Some', 'Mostly complete', 'Very complete'], scores: [0, 1, 2, 3, 4] },
-      { id: 14, dimension: 'workflow', text: 'I evaluate the efficiency difference before and after using AI tools', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Every time'], scores: [0, 1, 2, 3, 4] },
-      { id: 15, dimension: 'workflow', text: 'I proactively explore AI tools and introduce them into team workflows', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Continuously driving'], scores: [0, 1, 2, 3, 4] },
+      { id: 12, dimension: 'workflow', text: '我已将 AI 嵌入到具体的工作流程中（邮件撰写、数据分析、报告生成等）', options: ['完全没有', '偶尔', '部分流程', '大部分流程', '完全整合'], scores: [0, 1, 2, 3, 4] },
+      { id: 13, dimension: 'workflow', text: '我拥有可复用的 AI 工作模板或 SOP', options: ['没有', '很少', '有一些', '比较完善', '非常完善'], scores: [0, 1, 2, 3, 4] },
+      { id: 14, dimension: 'workflow', text: '使用 AI 工具前后，我会评估效率差异', options: ['从不', '偶尔', '有时', '经常', '每次都评估'], scores: [0, 1, 2, 3, 4] },
+      { id: 15, dimension: 'workflow', text: '我主动探索 AI 工具并将其引入团队工作流程', options: ['从不', '偶尔', '有时', '经常', '持续推动'], scores: [0, 1, 2, 3, 4] },
       
       // Q16-18: Innovation Driver (15%)
-      { id: 16, dimension: 'innovation', text: 'I can use AI to solve new problems I\'ve never encountered before, not just handle routine tasks', options: ['Completely unable', 'Occasionally', 'Sometimes', 'Often', 'Always innovating'], scores: [0, 1, 2, 3, 4] },
-      { id: 17, dimension: 'innovation', text: 'I organize verified AI usage methods into templates for team reuse', options: ['Never', 'Rarely', 'Sometimes', 'Often', 'Systematic organization'], scores: [0, 1, 2, 3, 4] },
-      { id: 18, dimension: 'innovation', text: 'I use AI to explore alternatives to traditional methods or new business scenarios', options: ['Never', 'Rarely', 'Occasionally', 'Often', 'Continuously exploring'], scores: [0, 1, 2, 3, 4] },
+      { id: 16, dimension: 'innovation', text: '我能用 AI 解决从未遇到过的新问题，而不仅仅是处理常规任务', options: ['完全不会', '偶尔可以', '有时可以', '经常可以', '持续创新'], scores: [0, 1, 2, 3, 4] },
+      { id: 17, dimension: 'innovation', text: '我将验证有效的 AI 使用方法整理成模板供团队复用', options: ['从不', '偶尔', '有时', '经常', '系统整理'], scores: [0, 1, 2, 3, 4] },
+      { id: 18, dimension: 'innovation', text: '我尝试用 AI 探索传统方法的替代方案或新业务场景', options: ['从不', '偶尔', '有时', '经常', '持续探索'], scores: [0, 1, 2, 3, 4] },
       
       // Q19-20: Strategic Thinking (10%)
-      { id: 19, dimension: 'strategy', text: 'I have a clear AI application plan with short-term and long-term goals', options: ['No plan at all', 'Some ideas', 'Initial plan', 'Mostly complete plan', 'Strategic-level plan'], scores: [0, 1, 2, 3, 4] },
-      { id: 20, dimension: 'strategy', text: 'I have participated in or led AI implementation projects in HR', options: ['Never', 'Participated', 'Led small projects', 'Led medium projects', 'Led strategic projects'], scores: [0, 1, 2, 3, 4] }
+      { id: 19, dimension: 'strategy', text: '我有清晰的 AI 应用规划，包括短期和长期目标', options: ['完全没有规划', '有一些想法', '初步规划', '比较完整的规划', '战略级规划'], scores: [0, 1, 2, 3, 4] },
+      { id: 20, dimension: 'strategy', text: '我参与过或主导过 HR 领域的 AI 落地项目', options: ['从未', '参与过', '主导过小型项目', '主导过中型项目', '主导过战略级项目'], scores: [0, 1, 2, 3, 4] }
     ];
     
     // Cross-validation pairs
     const crossValidationPairs = [
-      { pair: [3, 15], dimension: 'Awareness → Action', tolerance: 2 },
-      { pair: [6, 12], dimension: 'Habit → Process Consistency', tolerance: 2 },
-      { pair: [9, 17], dimension: 'Usage → Teaching', tolerance: 2 },
-      { pair: [4, 20], dimension: 'Personal Use → Org Promotion', tolerance: 2 }
+      { pair: [3, 15], dimension: '认知 → 行动', tolerance: 2 },
+      { pair: [6, 12], dimension: '习惯 → 流程一致性', tolerance: 2 },
+      { pair: [9, 17], dimension: '使用 → 传授', tolerance: 2 },
+      { pair: [4, 20], dimension: '个人使用 → 组织推广', tolerance: 2 }
     ];
     
     // Role advice library
     const roleAdvice = {
       'HRBP': {
-        focus: 'Business Enabler',
-        scenarios: ['Business talent inventory & forecasting', 'Org effectiveness analysis', 'Employee relations early warning', 'Career path design'],
+        focus: '业务赋能者',
+        scenarios: ['业务人才盘点与预测', '组织效能分析', '员工关系预警', '职业路径设计'],
         advices: [
-          'Use AI tools for business data analysis to enhance business insight',
-          'Build talent profiles for business departments to assist talent decisions',
-          'Integrate AI into employee communication scenarios for warmth & efficiency'
+          '使用 AI 工具进行业务数据分析，提升业务洞察力',
+          '为业务部门建立人才画像，辅助人才决策',
+          '将 AI 融入员工沟通场景，兼顾温度与效率'
         ],
-        nextStep: 'From AI-assisted analysis → AI-driven HRBP decisions'
+        nextStep: '从 AI 辅助分析 → AI 驱动的 HRBP 决策'
       },
       'COE': {
-        focus: 'Expert Solutions',
-        scenarios: ['Compensation system design', 'Training system planning', 'Performance program development', 'Policy design'],
+        focus: '专家解决方案',
+        scenarios: ['薪酬体系设计', '培训体系规划', '绩效方案开发', '政策制度设计'],
         advices: [
-          'Use AI for industry benchmark research to improve solution efficiency',
-          'Leverage AI for knowledge management and best practice documentation',
-          'Use AI as reference for professional judgment, not replacement'
+          '使用 AI 进行行业对标研究，提升方案效率',
+          '利用 AI 进行知识管理和最佳实践沉淀',
+          '将 AI 作为专业判断的参考，而非替代'
         ],
-        nextStep: 'From AI-assisted solutions → AI-native policies & systems'
+        nextStep: '从 AI 辅助方案 → AI 原生的政策与体系'
       },
       'SSC': {
-        focus: 'Process Automation',
-        scenarios: ['Employee lifecycle management', 'Payroll processing', 'HR service desk', 'Data report generation'],
+        focus: '流程自动化',
+        scenarios: ['员工生命周期管理', '薪资核算处理', 'HR 服务台', '数据报表生成'],
         advices: [
-          'Implement RPA+AI for transactional work automation',
-          'Build intelligent HR service desk to enhance employee experience',
-          'Use AI for standardized data work to free up human resources'
+          '推进 RPA+AI 落地，实现事务性工作自动化',
+          '打造智能化 HR 服务台，提升员工体验',
+          '使用 AI 处理标准化数据工作，释放人力资源'
         ],
-        nextStep: 'From process automation → Full-chain AI-driven service delivery'
+        nextStep: '从流程自动化 → 全链路 AI 驱动的服务交付'
       },
       'HRIS': {
-        focus: 'AI Tech Architecture',
-        scenarios: ['HR system AI integration', 'Data governance & modeling', 'AI platform selection', 'Automation infrastructure'],
+        focus: 'AI 技术架构',
+        scenarios: ['HR 系统 AI 集成', '数据治理与建模', 'AI 平台选型', '自动化基础设施'],
         advices: [
-          'Design AI-native HR system architecture from tool integration to capability embedding',
-          'Build HR data middle platform to provide data foundation for AI applications',
-          'Lead RPA+AI automation project implementation as benchmark'
+          '从工具集成到能力嵌入，设计 AI 原生的 HR 系统架构',
+          '构建 HR 数据中台，为 AI 应用提供数据基础',
+          '主导 RPA+AI 自动化项目实施，打造标杆'
         ],
-        nextStep: 'From system integration → AI-native HR tech architecture'
+        nextStep: '从系统集成 → AI 原生的 HR 技术架构'
       },
       'HR数据分析师': {
-        focus: 'Data-Driven Decisions',
-        scenarios: ['HR data analysis & modeling', 'Predictive talent analytics', 'Org diagnosis & insights', 'Data visualization'],
+        focus: '数据驱动决策',
+        scenarios: ['HR 数据分析与建模', '人才预测分析', '组织诊断与洞察', '数据可视化'],
         advices: [
-          'Master AI-assisted data analysis methods to improve efficiency',
-          'Build predictive models from descriptive to predictive analytics',
-          'Use AI to automate data processing, focusing on high-value insights'
+          '掌握 AI 辅助的数据分析方法，提升分析效率',
+          '从描述性分析向预测性分析，构建预测模型',
+          '使用 AI 自动化数据处理，聚焦高价值洞察'
         ],
-        nextStep: 'From assisted analytics → AI-native data decision architecture'
+        nextStep: '从辅助分析 → AI 原生的数据决策架构'
       },
       'HR数字化负责人': {
-        focus: 'Digital Transformation',
-        scenarios: ['HR digital strategy planning', 'AI application roadmap', 'Vendor selection & evaluation', 'Change management'],
+        focus: '数字化转型',
+        scenarios: ['HR 数字化战略规划', 'AI 应用路线图', '供应商选型与评估', '变革管理'],
         advices: [
-          'Develop strategic roadmap for HR digital transformation in the AI era',
-          'Evaluate and introduce AI HR solutions suitable for the enterprise',
-          'Establish AI application governance framework and ethical guidelines'
+          '制定 AI 时代的 HR 数字化转型战略路线图',
+          '评估引入适合企业的 AI HR 解决方案',
+          '建立 AI 应用治理框架和伦理规范'
         ],
-        nextStep: 'From digital transformation → AI-native HR org design'
+        nextStep: '从数字化转型 → AI 原生的 HR 组织设计'
       },
       '招聘与配置': {
-        focus: 'Smart Recruitment',
-        scenarios: ['Resume screening', 'Interview assistance', 'Talent mapping', 'Employer branding'],
+        focus: '智能招聘',
+        scenarios: ['简历筛选', '面试辅助', '人才地图', '雇主品牌'],
         advices: [
-          'Use AI to assist resume screening and improve recruitment efficiency',
-          'Build talent profiles for precise person-job matching',
-          'Use AI to assist interview evaluation and reduce subjective bias'
+          '使用 AI 辅助简历筛选，提升招聘效率',
+          '建立人才画像，实现精准人岗匹配',
+          '使用 AI 辅助面试评估，减少主观偏见'
         ],
-        nextStep: 'From smart recruitment → AI-driven predictive talent strategy'
+        nextStep: '从智能招聘 → AI 驱动的预测性人才战略'
       },
       '培训与开发': {
-        focus: 'Smart Learning',
-        scenarios: ['Training needs analysis', 'Course content generation', 'Learning effectiveness evaluation', 'Talent development'],
+        focus: '智能学习',
+        scenarios: ['培训需求分析', '课程内容生成', '学习效果评估', '人才发展'],
         advices: [
-          'Use AI to analyze training needs and develop personalized learning paths',
-          'Leverage AI to generate training content and assessment questions',
-          'Build AI-based competency development system'
+          '使用 AI 分析培训需求，制定个性化学习路径',
+          '利用 AI 生成培训内容和评估题目',
+          '构建基于 AI 的能力发展体系'
         ],
-        nextStep: 'From smart training → AI-driven adaptive learning organization'
+        nextStep: '从智能培训 → AI 驱动的自适应学习组织'
       },
       '绩效管理': {
-        focus: 'Data Performance',
-        scenarios: ['Performance indicator design', 'Data collection & analysis', 'Feedback & coaching', 'Result application'],
+        focus: '数据绩效',
+        scenarios: ['绩效指标设计', '数据收集与分析', '反馈与辅导', '结果应用'],
         advices: [
-          'Use AI to assist performance data analysis and discover management blind spots',
-          'Establish OKR+AI agile performance management model',
-          'Use AI for real-time feedback and personalized coaching suggestions'
+          '使用 AI 辅助绩效数据分析，发现管理盲点',
+          '建立 OKR+AI 敏捷绩效管理模式',
+          '使用 AI 进行实时反馈和个性化辅导建议'
         ],
-        nextStep: 'From data performance → AI-enabled continuous performance management'
+        nextStep: '从数据绩效 → AI 赋能的持续绩效管理'
       },
       '薪酬福利': {
-        focus: 'Smart Compensation',
-        scenarios: ['Compensation system design', 'Market research', 'Cost analysis', 'Benefits optimization'],
+        focus: '智能薪酬',
+        scenarios: ['薪酬体系设计', '市场调研', '成本分析', '福利优化'],
         advices: [
-          'Use AI for compensation data analysis and market benchmarking',
-          'Build intelligent compensation recommendation model',
-          'Use AI to optimize benefits program design and improve employee satisfaction'
+          '使用 AI 进行薪酬数据分析和市场对标',
+          '构建智能化薪酬推荐模型',
+          '使用 AI 优化福利方案设计，提升员工满意度'
         ],
-        nextStep: 'From smart compensation → AI-driven self-optimizing compensation system'
+        nextStep: '从智能薪酬 → AI 驱动的自优化薪酬体系'
       },
       '劳动关系': {
-        focus: 'Risk Early Warning',
-        scenarios: ['Compliance review', 'Risk early warning', 'Employee care', 'Dispute resolution'],
+        focus: '风险预警',
+        scenarios: ['合规审查', '风险预警', '员工关怀', '纠纷处理'],
         advices: [
-          'Use AI to assist labor law compliance review',
-          'Build employee relations risk early warning model',
-          'Use AI to analyze employee sentiment and prevent potential risks'
+          '使用 AI 辅助劳动法合规审查',
+          '建立员工关系风险预警模型',
+          '使用 AI 分析员工情绪，预防潜在风险'
         ],
-        nextStep: 'From risk warning → AI-driven harmonious labor relations ecosystem'
+        nextStep: '从风险预警 → AI 驱动的和谐劳动关系生态'
       },
       '人力资源规划': {
-        focus: 'Strategic Planning',
-        scenarios: ['Talent demand forecasting', 'Supply analysis', 'Planning modeling', 'Effect evaluation'],
+        focus: '战略规划',
+        scenarios: ['人才需求预测', '供给分析', '规划建模', '效果评估'],
         advices: [
-          'Use AI for talent supply-demand forecasting and gap analysis',
-          'Build HR planning data model',
-          'Use AI to simulate effects of different planning scenarios'
+          '使用 AI 进行人才供需预测和缺口分析',
+          '构建 HR 规划数据模型',
+          '使用 AI 模拟不同规划方案的效果'
         ],
-        nextStep: 'From strategic planning → AI-driven dynamic talent strategy'
+        nextStep: '从战略规划 → AI 驱动的动态人才战略'
       },
       'default': {
-        focus: 'Efficiency Improvement',
-        scenarios: ['Daily work efficiency', 'Process optimization', 'Data analysis', 'Communication & collaboration'],
+        focus: '效率提升',
+        scenarios: ['日常工作提效', '流程优化', '数据分析', '沟通协作'],
         advices: [
-          'Identify high-frequency repetitive work and introduce AI automation',
-          'Build personal AI workflow templates to improve efficiency',
-          'Continuously learn new AI tools to maintain competitiveness'
+          '识别高频重复工作，引入 AI 自动化',
+          '建立个人 AI 工作模板，提升效率',
+          '持续学习新 AI 工具，保持竞争力'
         ],
-        nextStep: 'From efficiency improvement → AI-native HR work model'
+        nextStep: '从效率提升 → AI 原生的 HR 工作模式'
       }
     };
     
     // Level definitions
     const levelInfo = {
-      L1: { name: 'Transactional HR', summary: 'AI has limited impact on your work, mainly focusing on transactional tasks. Start with simple AI tools and gradually build AI awareness.', color: '#64748B' },
-      L2: { name: 'Tool-Enabled HR', summary: 'AI is your daily efficiency partner, skilled with common AI tools. Continue deepening tool application and explore more scenarios.', color: '#3B82F6' },
-      L3: { name: 'Capable HR', summary: 'AI has integrated into your work style with systematic application capability. Reaching L4 requires more organizational perspective practice.', color: '#10B981' },
-      L4: { name: 'Systemic HR', summary: 'AI is reshaping your HR work model with strategic thinking and innovation capability. Continue leading the evolution of AI-native HR organizational forms.', color: '#F59E0B' }
+      L1: { name: '事务型 HR', summary: 'AI 对你的工作影响有限，主要聚焦事务性任务。从简单的 AI 工具开始，逐步建立 AI 认知。', color: '#64748B' },
+      L2: { name: '工具型 HR', summary: 'AI 是你日常的效率伙伴，熟练使用常见 AI 工具。继续深化工具应用，探索更多场景。', color: '#3B82F6' },
+      L3: { name: '能力型 HR', summary: 'AI 已融入你的工作方式，具备系统的应用能力。要达到 L4 需要更多组织视角的实践。', color: '#10B981' },
+      L4: { name: '战略型 HR', summary: 'AI 正在重塑你的 HR 工作模式，具备战略思维和创新能力。继续引领 AI 原生 HR 组织形态的演进。', color: '#F59E0B' }
     };
     
     // Share copies
     const shareCopies = {
-      L1: 'I just completed the #HRizon AI Readiness Assessment# and realized how close AI is to HR work... Found my gaps. Take the test yourself! #AI-NativeHR#',
-      L2: 'I scored L2 Tool-Enabled HR on the #HRizon AI Readiness Assessment#! AI is already my daily efficiency partner. Test your HR AI level! #AI-NativeHR#',
-      L3: 'I\'m L3 Capable HR on the #HRizon AI Readiness Assessment#! AI has integrated into my work style. See what level you can reach! #AI-NativeHR#',
-      L4: 'I reached L4 Systemic HR on the #HRizon AI Readiness Assessment#! AI is reshaping my HR work model. Are you ready? Take the test! #AI-NativeHR#'
+      L1: '刚完成 #HRizon HR AI 能力测评#，发现 AI 离 HR 工作这么近... 找到了自己的差距，你也来测测吧！#AI原生HR#',
+      L2: '我在 #HRizon HR AI 能力测评# 中获得了 L2 工具型 HR！AI 已成为我的日常效率伙伴，快来测试你的 HR AI 等级！#AI原生HR#',
+      L3: '我在 #HRizon HR AI 能力测评# 中达到 L3 能力型 HR！AI 已融入我的工作方式，看看你能到哪个等级！#AI原生HR#',
+      L4: '我在 #HRizon HR AI 能力测评# 中达到 L4 战略型 HR！AI 正在重塑我的 HR 工作模式，你准备好了吗？快来测试！#AI原生HR#'
     };
     
     // ==================== State ====================
@@ -1429,10 +1429,10 @@
     function updateStartBtn() {
       if (selectedRole) {
         startBtn.disabled = false;
-        startBtn.textContent = 'Start Assessment';
+        startBtn.textContent = '开始测评';
       } else {
         startBtn.disabled = true;
-        startBtn.textContent = 'Select a role to begin';
+        startBtn.textContent = '请先选择一个角色';
       }
     }
     
@@ -1505,7 +1505,7 @@
       
       // Update nav buttons
       prevBtn.style.visibility = currentPage > 0 ? 'visible' : 'hidden';
-      nextBtn.textContent = currentPage === totalPages - 1 ? 'Submit & View Results' : 'Next';
+      nextBtn.textContent = currentPage === totalPages - 1 ? '提交并查看结果' : '下一题';
     }
     
     prevBtn.addEventListener('click', () => {
@@ -1523,7 +1523,7 @@
       const unanswered = pageQuestions.filter(q => answers[q.id] === undefined);
       
       if (unanswered.length > 0) {
-        showToast(`Please complete Q${unanswered[0].id}`);
+        showToast(`请完成第 ${unanswered[0].id} 题`);
         return;
       }
       
@@ -1618,12 +1618,12 @@
       // Show weak points
       const weakList = document.getElementById('weakList');
       if (result.weakDims.length === 0) {
-        weakList.innerHTML = '<li class="no-weak">🎉 All dimensions are balanced, keep it up!</li>';
+        weakList.innerHTML = '<li class="no-weak">🎉 各维度发展均衡，继续保持！</li>';
       } else {
         weakList.innerHTML = result.weakDims.map(dim => `
           <li class="weak-item">
             <div class="dim-name">${dim.name}</div>
-            <div class="dim-desc">Focus on this area and strengthen practical application</div>
+            <div class="dim-desc">重点关注这个领域，加强实际应用</div>
           </li>
         `).join('');
       }
@@ -1639,10 +1639,10 @@
           </div>
         `).join('')}
         <div class="advice-card highlight">
-          <h4>🚀 Level Up to AI-Native HR</h4>
+          <h4>🚀 升级到 AI 原生 HR</h4>
           <p>${advice.nextStep}</p>
           <div class="next-step">
-            <strong>Next Step</strong>
+            <strong>下一步</strong>
             ${advice.scenarios[0]}
           </div>
         </div>
@@ -1652,9 +1652,9 @@
       const credDot = document.getElementById('credDot');
       credDot.className = 'cred-dot ' + result.credibility;
       const credText = document.getElementById('credText');
-      credText.textContent = `Response credibility: ${result.credibility === 'high' ? 'High' : result.credibility === 'medium' ? 'Medium' : 'Low'}`;
+      credText.textContent = `答题可信度：${result.credibility === 'high' ? '高' : result.credibility === 'medium' ? '中' : '低'}`;
       if (result.inconsistencies > 0) {
-        credText.textContent += ` (${result.inconsistencies} inconsistencies)`;
+        credText.textContent += ` (${result.inconsistencies} 处不一致)`;
       }
       
       // Store result for share
@@ -1773,7 +1773,7 @@
       ctx.fillStyle = '#94A3B8';
       ctx.font = '14px -apple-system, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('HRizon - AI Readiness Assessment', 180, 60);
+      ctx.fillText('HRizon - HR AI 能力测评', 180, 60);
       
       // Level badge circle
       const badgeColors = {
@@ -1841,12 +1841,12 @@
       // CTA
       ctx.fillStyle = '#F59E0B';
       ctx.font = '13px -apple-system, sans-serif';
-      ctx.fillText('Scan to test your HR AI level', 180, 440);
+      ctx.fillText('扫码测测你的 HR AI 等级', 180, 440);
       
       // Privacy note
       ctx.fillStyle = '#64748B';
       ctx.font = '10px -apple-system, sans-serif';
-      ctx.fillText('Only level shown, no specific scores', 180, 465);
+      ctx.fillText('仅显示等级，不显示具体分数', 180, 465);
       
       // Show preview
       document.getElementById('sharePreview').classList.add('show');
@@ -1856,9 +1856,9 @@
       const result = window.currentResult;
       const text = shareCopies[result.level];
       navigator.clipboard.writeText(text).then(() => {
-        showToast('Copied to clipboard');
+        showToast('已复制到剪贴板');
       }).catch(() => {
-        showToast('Copy failed, please copy manually');
+        showToast('复制失败，请手动复制');
       });
     }
     
@@ -1868,7 +1868,7 @@
       link.download = 'HRizon-Result.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
-      showToast('Image saved');
+      showToast('图片已保存');
     }
     
     // ==================== Restart ====================
