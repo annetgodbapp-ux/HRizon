@@ -545,16 +545,23 @@
     }
     
     .level-letter {
-      font-size: 3.5rem;
+      font-size: 2.2rem;
       font-weight: 800;
       color: white;
       line-height: 1;
     }
     
-    .level-stage {
-      font-size: 1rem;
+    .level-sep {
+      font-size: 1.4rem;
+      opacity: 0.6;
+      margin: 0 2px;
+    }
+    
+    .level-type-name {
+      font-size: 0.75rem;
+      font-weight: 600;
       color: rgba(255, 255, 255, 0.9);
-      margin-top: 4px;
+      letter-spacing: 0.5px;
     }
     
     .level-name {
@@ -914,6 +921,200 @@
       font-size: 0.85rem;
       opacity: 0.7;
     }
+
+    /* ===================== Level Intro Section ===================== */
+    .level-intro-section {
+      padding: 28px;
+      margin-bottom: 24px;
+    }
+
+    .level-intro-header {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .level-intro-header .framework-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .level-intro-header h3 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.4;
+      margin-bottom: 12px;
+    }
+
+    .level-intro-desc {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      max-width: 600px;
+      margin: 0 auto 20px;
+    }
+
+    .level-intro-tip {
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.15);
+      border-radius: 12px;
+      padding: 14px 20px;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    .level-intro-tip p {
+      color: var(--accent-light);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .level-intro-tip .tip-zh {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      margin-top: 4px;
+    }
+
+    .level-intro-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .level-card {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: var(--radius-sm);
+      padding: 20px 16px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .level-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .level-card.level-l1::before { background: #64748B; }
+    .level-card.level-l2::before { background: #3B82F6; }
+    .level-card.level-l3::before { background: #10B981; }
+    .level-card.level-l4::before { background: #F59E0B; }
+
+    .level-card.level-l1:hover { border-color: rgba(100, 116, 139, 0.35); }
+    .level-card.level-l2:hover { border-color: rgba(59, 130, 246, 0.35); }
+    .level-card.level-l3:hover { border-color: rgba(16, 185, 129, 0.35); }
+    .level-card.level-l4:hover { border-color: rgba(245, 158, 11, 0.35); }
+
+    .level-card-tag {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .level-card-badge {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.78rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .level-card-badge.badge-l1 { background: #64748B; }
+    .level-card-badge.badge-l2 { background: #3B82F6; }
+    .level-card-badge.badge-l3 { background: #10B981; }
+    .level-card-badge.badge-l4 { background: #F59E0B; }
+
+    .level-card-labels {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .level-card-label-en {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+    }
+
+    .level-card-label-zh {
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .level-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .level-card-subtitle {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .level-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .level-card-stages {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .level-card-stages li {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 8px 10px;
+      background: rgba(255, 255, 255, 0.02);
+      border-radius: 8px;
+      border-left: 2px solid transparent;
+      line-height: 1.4;
+    }
+
+    .level-card.level-l1 .level-card-stages li { border-left-color: rgba(100, 116, 139, 0.4); }
+    .level-card.level-l2 .level-card-stages li { border-left-color: rgba(59, 130, 246, 0.4); }
+    .level-card.level-l3 .level-card-stages li { border-left-color: rgba(16, 185, 129, 0.4); }
+    .level-card.level-l4 .level-card-stages li { border-left-color: rgba(245, 158, 11, 0.4); }
+
+    .stage-tag {
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .stage-detail {
+      opacity: 0.75;
+    }
     
     /* ===================== Responsive ===================== */
     @media (max-width: 768px) {
@@ -926,6 +1127,13 @@
       .about-section h3 { font-size: 1rem; }
       .about-item { flex-direction: column; gap: 8px; padding: 12px; }
       .about-icon-small { font-size: 1.2rem; }
+      
+      .level-intro-section { padding: 18px; margin-bottom: 16px; }
+      .level-intro-header h3 { font-size: 1.15rem; }
+      .level-intro-desc { font-size: 0.82rem; }
+      .level-intro-grid { grid-template-columns: 1fr; gap: 12px; }
+      .level-card { padding: 16px; }
+      .level-card-stages li { padding: 6px 8px; }
       
       .role-grid { grid-template-columns: 1fr; }
       .role-options-grid { grid-template-columns: 1fr; }
@@ -997,6 +1205,93 @@
               <strong>获取专属成长路径</strong>
               <p>测评不仅告诉你"在哪里"，还提供针对性的改进建议和 AI 工具推荐，帮助你持续提升 HR AI 能力。</p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HR AI 能力等级体系介绍 -->
+      <div class="level-intro-section glass-card">
+        <div class="level-intro-header">
+          <p class="framework-label">HR AI Forward Maturity Framework</p>
+          <h3>你在HR的AI时代<br>处在哪一层？</h3>
+        </div>
+        <p class="level-intro-desc">大多数HR不是完全不会AI，而是停留在"用过、知道一些，但还没有真正形成新工作方式"的阶段。真正拉开差距的，不是会不会，而是你有没有完成从工具使用到能力形成的跨越。</p>
+        <div class="level-intro-tip">
+          <p>Most HR professionals are still in L1. The real gap begins when you move from L1 to L2.</p>
+          <p class="tip-zh">最大的差距，不在于「没用过AI」，而在于你是否「习惯喊AI」，还是「默认以AI协作工作」。</p>
+        </div>
+        <div class="level-intro-grid">
+          <!-- L0 / Traditional -->
+          <div class="level-card level-l1">
+            <div class="level-card-tag">
+              <div class="level-card-badge badge-l1">L0</div>
+              <div class="level-card-labels">
+                <span class="level-card-label-en">Traditional</span>
+                <span class="level-card-label-zh">事务型HR</span>
+              </div>
+            </div>
+            <h4 class="level-card-title">Traditional HR</h4>
+            <p class="level-card-subtitle">事务型HR</p>
+            <p class="level-card-desc">AI尚未进入工作方式，依赖人工和传统流程。</p>
+            <ul class="level-card-stages">
+              <li><span class="stage-tag">S1 · Manual HR ｜人工执行者</span><span class="stage-detail">依赖人工完成所有工作，未曾触AI。</span></li>
+              <li><span class="stage-tag">S2 · AI-Curious HR ｜认知好奇者</span><span class="stage-detail">了解AI，开始尝试但尚未来使用。</span></li>
+              <li><span class="stage-tag">S3 · Early Trial HR ｜初学尝试者</span><span class="stage-detail">尝试过AI工具，但使用不连续。</span></li>
+            </ul>
+          </div>
+          <!-- L1 / Enabled -->
+          <div class="level-card level-l2">
+            <div class="level-card-tag">
+              <div class="level-card-badge badge-l2">L1</div>
+              <div class="level-card-labels">
+                <span class="level-card-label-en">Enabled</span>
+                <span class="level-card-label-zh">工具型HR</span>
+              </div>
+            </div>
+            <h4 class="level-card-title">AI-Enabled HR</h4>
+            <p class="level-card-subtitle">工具型HR</p>
+            <p class="level-card-desc">AI作为个人效率工具，停留在工具使用层面。</p>
+            <ul class="level-card-stages">
+              <li><span class="stage-tag">S1 · Tool Starter ｜工具入门者</span><span class="stage-detail">用AI做过个别任务，但是零星地使用。</span></li>
+              <li><span class="stage-tag">S2 · Tool User ｜工具应用者</span><span class="stage-detail">已在多个场景使用AI，开始形成基本习惯。</span></li>
+              <li><span class="stage-tag">S3 · Structured User ｜规范使用者</span><span class="stage-detail">开始有方法、有模版，具备一定运营意识。</span></li>
+            </ul>
+          </div>
+          <!-- L2 / Ready - highlighted as key transition -->
+          <div class="level-card level-l3">
+            <div class="level-card-tag">
+              <div class="level-card-badge badge-l3">L2</div>
+              <div class="level-card-labels">
+                <span class="level-card-label-en">Ready</span>
+                <span class="level-card-label-zh">能力型HR</span>
+              </div>
+            </div>
+            <h4 class="level-card-title">AI-Ready HR</h4>
+            <p class="level-card-subtitle">能力型HR</p>
+            <p class="level-card-desc">AI固定进入工作方式，形成可复用的能力体系。</p>
+            <ul class="level-card-stages">
+              <li><span class="stage-tag">S1 · Workflow Adopter ｜流程接入者</span><span class="stage-detail">AI已进入固定工作环节，不只是尝，是常驻。</span></li>
+              <li><span class="stage-tag">S2 · Capability Builder ｜能力构建者</span><span class="stage-detail">形成可复用的方法，能在不同场景中迁移应用。</span></li>
+              <li><span class="stage-tag">S3 · Ready Practitioner ｜成熟实践者</span><span class="stage-detail">AI像嵌入多个场景，具备成套意识和可分享。</span></li>
+            </ul>
+          </div>
+          <!-- L3 / Native -->
+          <div class="level-card level-l4">
+            <div class="level-card-tag">
+              <div class="level-card-badge badge-l4">L3</div>
+              <div class="level-card-labels">
+                <span class="level-card-label-en">Native</span>
+                <span class="level-card-label-zh">战略型HR</span>
+              </div>
+            </div>
+            <h4 class="level-card-title">AI-Native HR</h4>
+            <p class="level-card-subtitle">战略型HR</p>
+            <p class="level-card-desc">AI驱动流程和系统运行，极少数人达到。</p>
+            <ul class="level-card-stages">
+              <li><span class="stage-tag">S1 · System Explorer ｜系统探索者</span><span class="stage-detail">搭建或整合自动化流程，开始尝试系统化应用。</span></li>
+              <li><span class="stage-tag">S2 · System Operator ｜系统运营者</span><span class="stage-detail">多个场景实现自动化，具备系统运营管理能力。</span></li>
+              <li><span class="stage-tag">S3 · Native Leader ｜原生引领者</span><span class="stage-detail">用AI重构工作模式，推动团队进入下一阶段。</span></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1100,7 +1395,8 @@
       <div class="result-header">
         <div class="level-badge" id="levelBadge">
           <span class="level-letter" id="levelLetter">L1</span>
-          <span class="level-stage" id="levelStage">S2</span>
+          <span class="level-sep">·</span>
+          <span class="level-type-name" id="levelTypeName">事务型HR</span>
         </div>
         <h2 class="level-name" id="levelName">能力构建者</h2>
         <p class="level-summary" id="levelSummary">AI已融入你的工作方式，但仍有进阶空间</p>
@@ -1625,8 +1921,7 @@
       const badge = document.getElementById('levelBadge');
       badge.className = 'level-badge ' + result.level;
       document.getElementById('levelLetter').textContent = result.level;
-      document.getElementById('levelStage').textContent = result.stage;
-      document.getElementById('levelName').textContent = levelInfo[result.level].name;
+      document.getElementById('levelTypeName').textContent = levelInfo[result.level].name;
       document.getElementById('levelSummary').textContent = levelInfo[result.level].summary;
       
       // Draw radar chart
@@ -1834,9 +2129,9 @@
       ctx.textBaseline = 'middle';
       ctx.fillText(result.level, 180, y + 48);
       
-      // Stage
-      ctx.font = '14px -apple-system, sans-serif';
-      ctx.fillText(result.stage, 180, y + 78);
+      // Level name in badge
+      ctx.font = '13px -apple-system, sans-serif';
+      ctx.fillText(levelInfo[result.level].name, 180, y + 78);
       y += 120;
       
       // Level name
