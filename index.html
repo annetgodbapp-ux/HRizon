@@ -1950,23 +1950,25 @@
         ? improvementTips[Math.floor(Math.random() * improvementTips.length)]
         : '持续关注 AI 在 HR 领域的最新应用，保持学习热情';
       
-      const adviceGrid = document.getElementById('adviceGrid');
-      adviceGrid.innerHTML = `
-        ${advice.advices.slice(0, 2).map(a => `
-          <div class="advice-card">
-            <h4>💡 ${advice.focus}</h4>
-            <p>${a}</p>
+      const adviceGridEl = document.getElementById('adviceGrid');
+      if (adviceGridEl) {
+        adviceGridEl.innerHTML = `
+          ${advice.advices.slice(0, 2).map(a => `
+            <div class="advice-card">
+              <h4>💡 ${advice.focus}</h4>
+              <p>${a}</p>
+            </div>
+          `).join('')}
+          <div class="advice-card highlight">
+            <h4>🚀 升级到 AI 原生 HR</h4>
+            <p>${advice.nextStep}</p>
+            <div class="next-step">
+              <strong>推荐行动（基于你的弱项：${weakestDim ? weakestDim.name : '均衡发展'}）</strong>
+              ${nextRecommendation}
+            </div>
           </div>
-        `).join('')}
-        <div class="advice-card highlight">
-          <h4>🚀 升级到 AI 原生 HR</h4>
-          <p>${advice.nextStep}</p>
-          <div class="next-step">
-            <strong>推荐行动（基于你的弱项：${weakestDim ? weakestDim.name : '均衡发展'}）</strong>
-            ${nextRecommendation}
-          </div>
-        </div>
-      `;
+        `;
+      }
       
       // Show credibility
       const credDot = document.getElementById('credDot');
