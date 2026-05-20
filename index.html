@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>HRizon - HR AI 能力测评</title>
+  <title>HR AI Leap - 测测你的 HR AI 跃迁到了哪一级</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     
@@ -955,8 +955,8 @@
     <!-- Stage 1: Role Selection -->
     <div id="stage1" class="stage active">
       <div class="header">
-        <h1>HRizon</h1>
-        <p>发现你的 AI 能力水平，找到专属成长路径</p>
+        <h1>HR AI Leap</h1>
+        <p>测测你的 HR AI 跃迁到了哪一级</p>
         <div class="stats">
           <span class="stat-item">
             <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
@@ -1773,7 +1773,7 @@
       ctx.fillStyle = '#94A3B8';
       ctx.font = '14px -apple-system, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('HRizon - HR AI 能力测评', 180, 60);
+      ctx.fillText('HR AI Leap - 测测你的 HR AI 跃迁到了哪一级', 180, 60);
       
       // Level badge circle
       const badgeColors = {
@@ -1865,7 +1865,7 @@
     function downloadShareCard() {
       const canvas = document.getElementById('shareCard');
       const link = document.createElement('a');
-      link.download = 'HRizon-Result.png';
+      link.download = 'HR-AI-Leap-Result.png';
       link.href = canvas.toDataURL('image/png');
       link.click();
       showToast('图片已保存');
