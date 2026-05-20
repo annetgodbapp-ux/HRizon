@@ -1284,7 +1284,7 @@
             </button>
           </div>
           <div class="share-preview" id="sharePreview">
-            <canvas id="shareCard" width="360" height="680"></canvas>
+            <canvas id="shareCard" width="360" height="460"></canvas>
             <button class="download-btn" id="downloadBtn">保存图片</button>
           </div>
         </div>
@@ -1929,20 +1929,20 @@
       const ctx = canvas.getContext('2d');
       
       // Background gradient
-      const gradient = ctx.createLinearGradient(0, 0, 360, 680);
+      const gradient = ctx.createLinearGradient(0, 0, 360, 460);
       gradient.addColorStop(0, '#0F172A');
       gradient.addColorStop(1, '#1E3A5F');
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 360, 680);
+      ctx.fillRect(0, 0, 360, 460);
       
       // Decorative circles
       ctx.globalAlpha = 0.08;
       ctx.beginPath();
-      ctx.arc(320, 60, 100, 0, Math.PI * 2);
+      ctx.arc(320, 40, 80, 0, Math.PI * 2);
       ctx.fillStyle = '#3B82F6';
       ctx.fill();
       ctx.beginPath();
-      ctx.arc(40, 600, 90, 0, Math.PI * 2);
+      ctx.arc(40, 420, 70, 0, Math.PI * 2);
       ctx.fillStyle = '#F59E0B';
       ctx.fill();
       ctx.globalAlpha = 1;
