@@ -1211,7 +1211,6 @@
     const roleAdvice = {
       'HRBP': {
         focus: '业务赋能者',
-        scenarios: ['业务人才盘点与预测', '组织效能分析', '员工关系预警', '职业路径设计'],
         advices: [
           '使用 AI 工具进行业务数据分析，提升业务洞察力',
           '为业务部门建立人才画像，辅助人才决策',
@@ -1221,7 +1220,6 @@
       },
       'COE': {
         focus: '专家解决方案',
-        scenarios: ['薪酬体系设计', '培训体系规划', '绩效方案开发', '政策制度设计'],
         advices: [
           '使用 AI 进行行业对标研究，提升方案效率',
           '利用 AI 进行知识管理和最佳实践沉淀',
@@ -1231,7 +1229,6 @@
       },
       'SSC': {
         focus: '流程自动化',
-        scenarios: ['员工生命周期管理', '薪资核算处理', 'HR 服务台', '数据报表生成'],
         advices: [
           '推进 RPA+AI 落地，实现事务性工作自动化',
           '打造智能化 HR 服务台，提升员工体验',
@@ -1241,7 +1238,6 @@
       },
       'HRIS': {
         focus: 'AI 技术架构',
-        scenarios: ['HR 系统 AI 集成', '数据治理与建模', 'AI 平台选型', '自动化基础设施'],
         advices: [
           '从工具集成到能力嵌入，设计 AI 原生的 HR 系统架构',
           '构建 HR 数据中台，为 AI 应用提供数据基础',
@@ -1251,7 +1247,6 @@
       },
       'HR数据分析师': {
         focus: '数据驱动决策',
-        scenarios: ['HR 数据分析与建模', '人才预测分析', '组织诊断与洞察', '数据可视化'],
         advices: [
           '掌握 AI 辅助的数据分析方法，提升分析效率',
           '从描述性分析向预测性分析，构建预测模型',
@@ -1261,7 +1256,6 @@
       },
       'HR数字化负责人': {
         focus: '数字化转型',
-        scenarios: ['HR 数字化战略规划', 'AI 应用路线图', '供应商选型与评估', '变革管理'],
         advices: [
           '制定 AI 时代的 HR 数字化转型战略路线图',
           '评估引入适合企业的 AI HR 解决方案',
@@ -1271,7 +1265,6 @@
       },
       '招聘与配置': {
         focus: '智能招聘',
-        scenarios: ['简历筛选', '面试辅助', '人才地图', '雇主品牌'],
         advices: [
           '使用 AI 辅助简历筛选，提升招聘效率',
           '建立人才画像，实现精准人岗匹配',
@@ -1281,7 +1274,6 @@
       },
       '培训与开发': {
         focus: '智能学习',
-        scenarios: ['培训需求分析', '课程内容生成', '学习效果评估', '人才发展'],
         advices: [
           '使用 AI 分析培训需求，制定个性化学习路径',
           '利用 AI 生成培训内容和评估题目',
@@ -1291,7 +1283,6 @@
       },
       '绩效管理': {
         focus: '数据绩效',
-        scenarios: ['绩效指标设计', '数据收集与分析', '反馈与辅导', '结果应用'],
         advices: [
           '使用 AI 辅助绩效数据分析，发现管理盲点',
           '建立 OKR+AI 敏捷绩效管理模式',
@@ -1301,7 +1292,6 @@
       },
       '薪酬福利': {
         focus: '智能薪酬',
-        scenarios: ['薪酬体系设计', '市场调研', '成本分析', '福利优化'],
         advices: [
           '使用 AI 进行薪酬数据分析和市场对标',
           '构建智能化薪酬推荐模型',
@@ -1311,7 +1301,6 @@
       },
       '劳动关系': {
         focus: '风险预警',
-        scenarios: ['合规审查', '风险预警', '员工关怀', '纠纷处理'],
         advices: [
           '使用 AI 辅助劳动法合规审查',
           '建立员工关系风险预警模型',
@@ -1321,7 +1310,6 @@
       },
       '人力资源规划': {
         focus: '战略规划',
-        scenarios: ['人才需求预测', '供给分析', '规划建模', '效果评估'],
         advices: [
           '使用 AI 进行人才供需预测和缺口分析',
           '构建 HR 规划数据模型',
@@ -1331,7 +1319,6 @@
       },
       'default': {
         focus: '效率提升',
-        scenarios: ['日常工作提效', '流程优化', '数据分析', '沟通协作'],
         advices: [
           '识别高频重复工作，引入 AI 自动化',
           '建立个人 AI 工作模板，提升效率',
@@ -1339,6 +1326,40 @@
         ],
         nextStep: '从效率提升 → AI 原生的 HR 工作模式'
       }
+    };
+    
+    // 维度对应的改进建议（根据答题结果动态生成）
+    const dimImprovementMap = {
+      'cognition': [
+        '关注 HR 领域 AI 应用案例，了解最新工具动态',
+        '学习 AI 基础概念，判断 AI 能力边界',
+        '阅读 AI+HR 行业报告，建立认知框架'
+      ],
+      'habit': [
+        '每天固定使用 AI 工具处理 1-2 项任务',
+        '将 AI 使用融入日常工作流程',
+        '建立 AI 使用记录，培养使用习惯'
+      ],
+      'tools': [
+        '掌握高效提示词写法，提升 AI 输出质量',
+        '尝试 3-5 款 HR 相关的 AI 工具',
+        '整理个人 AI 工具库，形成使用清单'
+      ],
+      'workflow': [
+        '梳理高频重复任务，尝试用 AI 自动化',
+        '建立可复用的 AI 工作模板/SOP',
+        '评估 AI 使用前后的效率差异'
+      ],
+      'innovation': [
+        '尝试用 AI 解决从未处理过的新问题',
+        '探索 AI 在传统工作方法中的创新应用',
+        '总结 AI 最佳实践，向团队分享推广'
+      ],
+      'strategy': [
+        '制定个人 AI 应用短期和长期目标',
+        '主动参与或主导一个 HR AI 试点项目',
+        '关注 AI 对 HR 组织变革的影响'
+      ]
     };
     
     // Level definitions
@@ -1630,6 +1651,14 @@
       
       // Show advice
       const advice = roleAdvice[selectedRole] || roleAdvice['default'];
+      
+      // 根据最弱维度动态生成下一步推荐
+      const weakestDim = result.weakDims.length > 0 ? result.weakDims[0] : null;
+      const improvementTips = weakestDim ? dimImprovementMap[weakestDim.id] : null;
+      const nextRecommendation = improvementTips 
+        ? improvementTips[Math.floor(Math.random() * improvementTips.length)]
+        : '持续关注 AI 在 HR 领域的最新应用，保持学习热情';
+      
       const adviceGrid = document.getElementById('adviceGrid');
       adviceGrid.innerHTML = `
         ${advice.advices.slice(0, 2).map(a => `
@@ -1642,8 +1671,8 @@
           <h4>🚀 升级到 AI 原生 HR</h4>
           <p>${advice.nextStep}</p>
           <div class="next-step">
-            <strong>下一步</strong>
-            ${advice.scenarios[0]}
+            <strong>推荐行动（基于你的弱项：${weakestDim ? weakestDim.name : '均衡发展'}）</strong>
+            ${nextRecommendation}
           </div>
         </div>
       `;
