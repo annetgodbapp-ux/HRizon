@@ -1284,7 +1284,7 @@
             </button>
           </div>
           <div class="share-preview" id="sharePreview">
-            <canvas id="shareCard" width="360" height="460"></canvas>
+            <canvas id="shareCard" width="360" height="320"></canvas>
             <button class="download-btn" id="downloadBtn">保存图片</button>
           </div>
         </div>
@@ -1927,34 +1927,35 @@
       const result = window.currentResult;
       const canvas = document.getElementById('shareCard');
       const ctx = canvas.getContext('2d');
+      const W = 360, H = 320;
       
       // Background gradient
-      const gradient = ctx.createLinearGradient(0, 0, 360, 460);
+      const gradient = ctx.createLinearGradient(0, 0, W, H);
       gradient.addColorStop(0, '#0F172A');
       gradient.addColorStop(1, '#1E3A5F');
       ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, 360, 460);
+      ctx.fillRect(0, 0, W, H);
       
       // Decorative circles
       ctx.globalAlpha = 0.08;
       ctx.beginPath();
-      ctx.arc(320, 40, 80, 0, Math.PI * 2);
+      ctx.arc(W - 35, 25, 60, 0, Math.PI * 2);
       ctx.fillStyle = '#3B82F6';
       ctx.fill();
       ctx.beginPath();
-      ctx.arc(40, 420, 70, 0, Math.PI * 2);
+      ctx.arc(35, H - 25, 50, 0, Math.PI * 2);
       ctx.fillStyle = '#F59E0B';
       ctx.fill();
       ctx.globalAlpha = 1;
       
-      let y = 45;
+      let y = 60;
       
       // Brand text
       ctx.fillStyle = '#94A3B8';
-      ctx.font = '13px -apple-system, sans-serif';
+      ctx.font = '12px -apple-system, sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('HR AI Leap · 测测你的 HR AI 跃迁到了哪一级', 180, y);
-      y += 35;
+      ctx.fillText('HR AI Leap · 测测你的 HR AI 跃迁到了哪一级', W / 2, y);
+      y += 32;
       
       // Level badge circle
       const badgeColors = {
@@ -1964,54 +1965,45 @@
         L4: ['#F59E0B', '#D97706']
       };
       const [c1, c2] = badgeColors[result.level];
-      const badgeGradient = ctx.createLinearGradient(120, y, 240, y + 120);
+      const badgeGradient = ctx.createLinearGradient(W / 2 - 45, y, W / 2 + 45, y + 90);
       badgeGradient.addColorStop(0, c1);
       badgeGradient.addColorStop(1, c2);
       ctx.beginPath();
-      ctx.arc(180, y + 55, 52, 0, Math.PI * 2);
+      ctx.arc(W / 2, y + 44, 44, 0, Math.PI * 2);
       ctx.fillStyle = badgeGradient;
       ctx.fill();
       
       // Badge shadow
       ctx.shadowColor = c1;
-      ctx.shadowBlur = 25;
+      ctx.shadowBlur = 20;
       ctx.beginPath();
-      ctx.arc(180, y + 55, 52, 0, Math.PI * 2);
+      ctx.arc(W / 2, y + 44, 44, 0, Math.PI * 2);
       ctx.fill();
       ctx.shadowBlur = 0;
       
       // Level letter
       ctx.fillStyle = '#FFFFFF';
-      ctx.font = 'bold 42px -apple-system, sans-serif';
+      ctx.font = 'bold 36px -apple-system, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(result.level, 180, y + 48);
+      ctx.fillText(result.level, W / 2, y + 38);
       
       // Level name in badge
-      ctx.font = '13px -apple-system, sans-serif';
-      ctx.fillText(levelInfo[result.level].name, 180, y + 78);
-      y += 120;
+      ctx.font = '12px -apple-system, sans-serif';
+      ctx.fillText(levelInfo[result.level].name, W / 2, y + 64);
+      y += 100;
       
       // Role tag
       ctx.fillStyle = 'rgba(59, 130, 246, 0.2)';
       ctx.beginPath();
-      ctx.roundRect(115, y, 130, 28, 14);
+      ctx.roundRect(W / 2 - 55, y, 110, 24, 12);
       ctx.fill();
       ctx.fillStyle = '#3B82F6';
-      ctx.font = '13px -apple-system, sans-serif';
+      ctx.font = '12px -apple-system, sans-serif';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.fillText(result.role, 180, y + 15);
-      y += 50;
-      
-      // Divider
-      ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(50, y);
-      ctx.lineTo(310, y);
-      ctx.stroke();
-      y += 20;
+      ctx.fillText(result.role, W / 2, y + 12);
+      y += 42;
       
       // Summary quote (支持自动换行)
       ctx.textBaseline = 'alphabetic';
@@ -2019,36 +2011,21 @@
       ctx.font = '12px -apple-system, sans-serif';
       ctx.textAlign = 'center';
       const summaryText = levelInfo[result.level].summary;
-      const maxWidth = 280;
+      const maxWidth = 290;
       let summaryLine = '';
       for (let i = 0; i < summaryText.length; i++) {
         const testLine = summaryLine + summaryText[i];
         if (ctx.measureText(testLine).width > maxWidth && summaryLine !== '') {
-          ctx.fillText(summaryLine, 180, y);
+          ctx.fillText(summaryLine, W / 2, y);
           summaryLine = summaryText[i];
-          y += 18;
+          y += 17;
         } else {
           summaryLine = testLine;
         }
       }
       if (summaryLine) {
-        ctx.fillText(summaryLine, 180, y);
-        y += 20;
+        ctx.fillText(summaryLine, W / 2, y);
       }
-      
-      y += 10;
-      
-      // Privacy note (可选: 不展示 CTA 文字)
-      /*
-      ctx.fillStyle = '#F59E0B';
-      ctx.font = '13px -apple-system, sans-serif';
-      ctx.fillText('📱 来测测你的 HR AI 等级', 180, y);
-      y += 28;
-      
-      ctx.fillStyle = '#64748B';
-      ctx.font = '10px -apple-system, sans-serif';
-      ctx.fillText('仅显示等级，不显示具体分数', 180, y);
-      */
       
       // Show preview
       document.getElementById('sharePreview').classList.add('show');
