@@ -1313,46 +1313,122 @@
       { id: 'strategy', name: '战略思维', weight: 0.10 }
     ];
     
-    const questions = [
+    const commonQuestions = [
       // Q1-3: AI Cognition & Awareness (15%)
       { id: 1, dimension: 'cognition', text: '我了解 HR 领域主要的 AI 应用场景（简历筛选、面试辅助、绩效分析等）', options: ['完全不了解', '了解一点', '基本了解', '比较了解', '非常了解'], scores: [0, 1, 2, 3, 4] },
       { id: 2, dimension: 'cognition', text: '我关注人力资源领域的 AI 趋势和新工具动态', options: ['从不关注', '偶尔关注', '有时关注', '经常关注', '持续关注'], scores: [0, 1, 2, 3, 4] },
       { id: 3, dimension: 'cognition', text: '我能清晰判断 AI 的"能力边界"——什么擅长，什么不擅长', options: ['完全不清楚', '比较模糊', '基本清晰', '比较清晰', '非常清晰'], scores: [0, 1, 2, 3, 4] },
-      
-      // Q4-7: Usage Frequency & Habits (20%)
+
+      // Q4-6: Usage Frequency & Habits (20%) — 3题通用
       { id: 4, dimension: 'habit', text: '你每周使用 AI 工具（如 ChatGPT、Copilot 等）的频率是？', options: ['几乎不用', '1-2次/周', '3-5次/周', '每天1-2次', '每天多次'], scores: [0, 1, 2, 3, 4] },
       { id: 5, dimension: 'habit', text: 'AI 工具已成为我日常工作的固定组成部分', options: ['完全不同意', '不太同意', '中立', '比较同意', '完全同意'], scores: [0, 1, 2, 3, 4] },
       { id: 6, dimension: 'habit', text: '遇到重复性工作时，我会主动考虑使用 AI 提效', options: ['从不', '偶尔', '有时', '经常', '总是'], scores: [0, 1, 2, 3, 4] },
-      { id: 7, dimension: 'habit', text: '我会向同事推荐好用的 AI 工具和使用技巧', options: ['从不', '偶尔', '有时', '经常', '主动分享'], scores: [0, 1, 2, 3, 4] },
-      
-      // Q8-11: Tool & Method Mastery (20%)
-      { id: 8, dimension: 'tools', text: '你目前经常使用的 AI 相关工具有多少个（含插件、SaaS 等）？', options: ['0个', '1-2个', '3-4个', '5-6个', '6个以上'], scores: [0, 1, 2, 3, 4] },
-      { id: 9, dimension: 'tools', text: '我能针对不同任务写出有效的提示词（Prompts）', options: ['完全不会', '不太会', '基本可以', '比较熟练', '非常熟练'], scores: [0, 1, 2, 3, 4] },
-      { id: 10, dimension: 'tools', text: '使用 AI 生成的内容前，我会验证其准确性', options: ['从不', '偶尔', '有时', '经常', '每次都验证'], scores: [0, 1, 2, 3, 4] },
-      { id: 11, dimension: 'tools', text: '我了解并使用过 HR 专用的 AI 工具（招聘系统、培训平台等）', options: ['完全不了解', '听说过', '试用过', '经常使用', '深度应用'], scores: [0, 1, 2, 3, 4] },
-      
-      // Q12-15: Workflow Integration (20%)
-      { id: 12, dimension: 'workflow', text: '我已将 AI 嵌入到具体的工作流程中（邮件撰写、数据分析、报告生成等）', options: ['完全没有', '偶尔', '部分流程', '大部分流程', '完全整合'], scores: [0, 1, 2, 3, 4] },
-      { id: 13, dimension: 'workflow', text: '我拥有可复用的 AI 工作模板或 SOP', options: ['没有', '很少', '有一些', '比较完善', '非常完善'], scores: [0, 1, 2, 3, 4] },
-      { id: 14, dimension: 'workflow', text: '使用 AI 工具前后，我会评估效率差异', options: ['从不', '偶尔', '有时', '经常', '每次都评估'], scores: [0, 1, 2, 3, 4] },
-      { id: 15, dimension: 'workflow', text: '我主动探索 AI 工具并将其引入团队工作流程', options: ['从不', '偶尔', '有时', '经常', '持续推动'], scores: [0, 1, 2, 3, 4] },
-      
-      // Q16-18: Innovation Driver (15%)
-      { id: 16, dimension: 'innovation', text: '我能用 AI 解决从未遇到过的新问题，而不仅仅是处理常规任务', options: ['完全不会', '偶尔可以', '有时可以', '经常可以', '持续创新'], scores: [0, 1, 2, 3, 4] },
-      { id: 17, dimension: 'innovation', text: '我将验证有效的 AI 使用方法整理成模板供团队复用', options: ['从不', '偶尔', '有时', '经常', '系统整理'], scores: [0, 1, 2, 3, 4] },
-      { id: 18, dimension: 'innovation', text: '我尝试用 AI 探索传统方法的替代方案或新业务场景', options: ['从不', '偶尔', '有时', '经常', '持续探索'], scores: [0, 1, 2, 3, 4] },
-      
-      // Q19-20: Strategic Thinking (10%)
-      { id: 19, dimension: 'strategy', text: '我有清晰的 AI 应用规划，包括短期和长期目标', options: ['完全没有规划', '有一些想法', '初步规划', '比较完整的规划', '战略级规划'], scores: [0, 1, 2, 3, 4] },
-      { id: 20, dimension: 'strategy', text: '我参与过或主导过 HR 领域的 AI 落地项目', options: ['从未', '参与过', '主导过小型项目', '主导过中型项目', '主导过战略级项目'], scores: [0, 1, 2, 3, 4] }
+
+      // Q7-9: Tool & Method Mastery (20%) — 3题通用
+      { id: 7, dimension: 'tools', text: '你目前经常使用的 AI 相关工具有多少个（含插件、SaaS 等）？', options: ['0个', '1-2个', '3-4个', '5-6个', '6个以上'], scores: [0, 1, 2, 3, 4] },
+      { id: 8, dimension: 'tools', text: '我能针对不同任务写出有效的提示词（Prompts）', options: ['完全不会', '不太会', '基本可以', '比较熟练', '非常熟练'], scores: [0, 1, 2, 3, 4] },
+      { id: 9, dimension: 'tools', text: '使用 AI 生成的内容前，我会验证其准确性', options: ['从不', '偶尔', '有时', '经常', '每次都验证'], scores: [0, 1, 2, 3, 4] },
+
+      // Q10-11: Workflow Integration (20%) — 2题通用
+      { id: 10, dimension: 'workflow', text: '我已将 AI 嵌入到具体的工作流程中（邮件撰写、数据分析、报告生成等）', options: ['完全没有', '偶尔', '部分流程', '大部分流程', '完全整合'], scores: [0, 1, 2, 3, 4] },
+      { id: 11, dimension: 'workflow', text: '我拥有可复用的 AI 工作模板或 SOP', options: ['没有', '很少', '有一些', '比较完善', '非常完善'], scores: [0, 1, 2, 3, 4] },
+
+      // Q12: Innovation Driver (15%) — 1题通用
+      { id: 12, dimension: 'innovation', text: '我能用 AI 解决从未遇到过的新问题，而不仅仅是处理常规任务', options: ['完全不会', '偶尔可以', '有时可以', '经常可以', '持续创新'], scores: [0, 1, 2, 3, 4] }
     ];
-    
+
+    const roleQuestionGroup = {
+      'HRBP': 'businessPartner',
+      'COE': 'expert',
+      'SSC': 'operations',
+      '招聘与配置': 'talent',
+      '培训与开发': 'expert',
+      '绩效管理': 'expert',
+      '薪酬福利': 'operations',
+      '劳动关系': 'operations',
+      '人力资源规划': 'talent',
+      'HRIS': 'tech',
+      'HR数据分析师': 'tech',
+      'HR数字化负责人': 'tech'
+    };
+
+    const roleSpecificQuestions = {
+      businessPartner: [
+        { dimension: 'workflow', text: '我使用 AI 辅助业务部门进行人才盘点和组织诊断', options: ['从不','偶尔','有时','经常','系统化使用'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我在与业务leader的对话中主动引用 AI 分析结果来支撑建议', options: ['从不','偶尔','有时','经常','已成为标准做法'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我使用 AI 分析业务数据来发现人才管理盲点', options: ['从不','很少','有时','经常','每周都做'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我使用过 AI 工具辅助人才画像构建或胜任力建模', options: ['从不','听说过','偶尔尝试','经常使用','深度应用'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我尝试用 AI 探索过新的员工保留或敬业度提升方案', options: ['从不','有想法未行动','尝试过1次','多次尝试','持续创新'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我向业务团队推广过 AI 在人员管理中的创新应用', options: ['从不','提过想法','分享过案例','推动过试点','系统推广'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我有 AI 赋能业务伙伴关系的短期和长期规划', options: ['完全没有','有一些想法','初步规划','比较完善','战略级规划'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我参与或主导过 AI 驱动的业务人才战略项目', options: ['从未','参与过讨论','参与过项目','主导过小项目','主导过战略项目'], scores: [0,1,2,3,4] }
+      ],
+      expert: [
+        { dimension: 'workflow', text: '我使用 AI 辅助 HR 政策研究或行业对标分析', options: ['从不','偶尔','有时','经常','深度应用'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我在专业方案设计流程中已将 AI 作为标准环节', options: ['完全没有','偶尔','有时','基本整合','完全融入'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我使用 AI 辅助生成培训大纲/绩效方案/制度文件等专业产出', options: ['从不','很少','有时','经常','每次都用'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我掌握至少1款 HR 专业领域的 AI 工具（培训平台/绩效系统等）', options: ['完全没有','了解过','试用过','熟练使用','深度定制'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我用 AI 探索过传统 HR 方案的新替代路径', options: ['从不','偶尔','有时','经常','持续探索'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我整理了 AI 辅助专业工作的最佳实践并分享给团队', options: ['从不','偶尔记录','整理了一些','系统整理','持续输出'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我有 AI 提升专业方案质量的清晰规划', options: ['完全没有','有些想法','初步规划','比较完整','系统规划'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我参与过 AI 在专业领域落地的项目（如 AI 培训系统选型）', options: ['从未','了解过','参与过','主导过','战略级推动'], scores: [0,1,2,3,4] }
+      ],
+      operations: [
+        { dimension: 'workflow', text: '我已将 AI/RPA 嵌入到标准化 HR 服务流程中', options: ['完全没有','极少量','部分流程','大部分流程','完全自动化'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我使用 AI 工具处理批量数据工作（考勤/薪酬核算/合同管理等）', options: ['从不','偶尔','有时','经常','全面使用'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我使用 AI 辅助处理员工问询或自助服务场景', options: ['从不','很少','有时','经常','每天多次'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我使用过 RPA 工具或 AI 客服系统来提升 HR 服务效率', options: ['从不','听说过','试用过','经常使用','深度应用'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我尝试用 AI 重新设计过 HR 服务交付流程', options: ['从不','有想法','尝试过1次','多次尝试','持续优化'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我推动过 RPA+AI 在 HR 运营中的创新落地', options: ['从不','提出过建议','参与过试点','主导过项目','系统推进'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我有 HR 运营全链路 AI 化的清晰规划', options: ['完全没有','有些想法','初步规划','较完整规划','战略级规划'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我参与或主导过 AI 驱动的 HR 运营提效项目', options: ['从未','参与过','主导过小型','主导过中型','战略级项目'], scores: [0,1,2,3,4] }
+      ],
+      talent: [
+        { dimension: 'workflow', text: '我使用 AI 辅助简历筛选或候选人匹配', options: ['从不','偶尔','有时','经常','深度整合'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我使用 AI 进行人才供需预测或人力规划建模', options: ['从不','偶尔','有时','经常','系统化使用'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我在招聘全流程中（JD撰写→筛选→评估→offer）使用 AI 辅助', options: ['从不','1个环节','2个环节','3个环节','全流程'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我使用过 AI 招聘工具或人才智能分析平台', options: ['从不','听说过','试用过','经常使用','深度应用'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我尝试用 AI 探索新的招聘渠道或人才触达方式', options: ['从不','有想法','尝试过1次','多次尝试','持续创新'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我总结了 AI 辅助招聘的增效数据并推动团队采用', options: ['从不','个人记录','小范围分享','团队推广','组织级推广'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我对 AI 驱动的人才招聘/规划有清晰的战略路线图', options: ['完全没有','有些想法','初步规划','较完整规划','战略级规划'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我参与或主导过 AI 赋能招聘或人才规划的战略项目', options: ['从未','参与过','主导过小型','主导过中型','战略级项目'], scores: [0,1,2,3,4] }
+      ],
+      tech: [
+        { dimension: 'workflow', text: '我已将 AI 能力嵌入到 HR 系统架构或数据管道中', options: ['完全没有','初步探索','部分集成','广泛集成','AI原生架构'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我使用 AI 辅助 HR 数据分析和可视化报告的自动化生成', options: ['从不','偶尔','有时','经常','完全自动化'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我使用 AI 工具进行数据处理和建模的频率', options: ['几乎不用','1-2次/月','1-2次/周','每天1-2次','每天多次'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我掌握 AI/ML 相关工具并应用于 HR 场景（Python AI库/BI AI等）', options: ['完全不掌握','了解基本概念','基本会用','熟练使用','专家级'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我探索过预测性人才分析或 AI 驱动的人力决策模型', options: ['从不','了解过','尝试过','构建过模型','持续迭代'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我推动过 AI 新工具/新架构在 HR 技术栈中的评估与落地', options: ['从不','提过建议','参与评估','主导选型','战略级推动'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我有 AI 原生 HR 技术架构的清晰规划', options: ['完全没有','有些想法','初步规划','较完整规划','战略级蓝图'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我主导过 HR 领域的 AI 平台建设或数据智能化项目', options: ['从未','参与过','主导过组件','主导过平台','主导过战略项目'], scores: [0,1,2,3,4] }
+      ],
+      default: [
+        { dimension: 'workflow', text: '我已将 AI 嵌入到至少一个核心 HR 工作流程中', options: ['完全没有','偶尔','部分流程','大部分流程','完全整合'], scores: [0,1,2,3,4] },
+        { dimension: 'workflow', text: '我使用 AI 辅助处理日常重复性 HR 任务', options: ['从不','偶尔','有时','经常','系统化使用'], scores: [0,1,2,3,4] },
+        { dimension: 'habit', text: '我在 HR 日常工作中使用 AI 辅助的频率', options: ['几乎不用','1-2次/周','3-5次/周','每天1-2次','每天多次'], scores: [0,1,2,3,4] },
+        { dimension: 'tools', text: '我了解并使用过 HR 相关的 AI 工具或平台', options: ['完全不了解','听说过','试用过','经常使用','深度应用'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我尝试用 AI 探索 HR 工作的新方法或新场景', options: ['从不','偶尔','有时','经常','持续探索'], scores: [0,1,2,3,4] },
+        { dimension: 'innovation', text: '我总结过 AI 在 HR 工作中的最佳实践并分享', options: ['从不','偶尔记录','整理了一些','系统整理','持续输出'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我有 AI 在 HR 领域应用的清晰规划', options: ['完全没有','有些想法','初步规划','较完整规划','系统规划'], scores: [0,1,2,3,4] },
+        { dimension: 'strategy', text: '我参与或主导过 HR 领域的 AI 相关项目', options: ['从未','参与过','主导过小型','主导过中型','主导过战略项目'], scores: [0,1,2,3,4] }
+      ]
+    };
+
+    function getQuestionsForRole(role) {
+      const group = roleQuestionGroup[role] || 'default';
+      const roleQs = roleSpecificQuestions[group];
+      return [...commonQuestions, ...roleQs.map((q, i) => ({ ...q, id: 13 + i }))];
+    }
+
+    let questions = [];
+
     // Cross-validation pairs
     const crossValidationPairs = [
-      { pair: [3, 15], dimension: '认知 → 行动', tolerance: 2 },
-      { pair: [6, 12], dimension: '习惯 → 流程一致性', tolerance: 2 },
-      { pair: [9, 17], dimension: '使用 → 传授', tolerance: 2 },
-      { pair: [4, 20], dimension: '个人使用 → 组织推广', tolerance: 2 }
+      { pair: [5, 15], dimension: '使用习惯一致性', tolerance: 2 },
+      { pair: [8, 16], dimension: '工具能力一致性', tolerance: 2 },
+      { pair: [10, 13], dimension: '工作流整合一致性', tolerance: 2 },
+      { pair: [12, 17], dimension: '创新行为一致性', tolerance: 2 }
     ];
     
     // Role advice library
@@ -1533,7 +1609,7 @@
     let startTime = null;
     let timerInterval = null;
     const questionsPerPage = 5;
-    const totalPages = Math.ceil(questions.length / questionsPerPage);
+    let totalPages = 0;
     
     // ==================== DOM Elements ====================
     const stage1 = document.getElementById('stage1');
@@ -1607,6 +1683,10 @@
     
     // ==================== Quiz Flow ====================
     startBtn.addEventListener('click', () => {
+      questions = getQuestionsForRole(selectedRole);
+      totalPages = Math.ceil(questions.length / questionsPerPage);
+      answers = {};
+      currentPage = 0;
       stage1.classList.remove('active');
       stage2.classList.add('active');
       startTime = Date.now();
@@ -1788,12 +1868,16 @@
       if (result.weakDims.length === 0) {
         weakList.innerHTML = '<li class="no-weak">🎉 各维度发展均衡，继续保持！</li>';
       } else {
-        weakList.innerHTML = result.weakDims.map(dim => `
+        weakList.innerHTML = result.weakDims.map(dim => {
+          const tips = dimImprovementMap[dim.id];
+          const desc = tips ? tips[0] : '重点关注这个领域，加强实际应用';
+          return `
           <li class="weak-item">
             <div class="dim-name">${dim.name}</div>
-            <div class="dim-desc">重点关注这个领域，加强实际应用</div>
+            <div class="dim-desc">${desc}</div>
           </li>
-        `).join('');
+        `;
+        }).join('');
       }
       
       // Show advice
@@ -2056,6 +2140,8 @@
       selectedRole = null;
       answers = {};
       currentPage = 0;
+      questions = [];
+      totalPages = 0;
       
       // Reset UI
       document.querySelectorAll('.role-category').forEach(c => {
